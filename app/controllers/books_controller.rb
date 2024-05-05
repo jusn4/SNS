@@ -10,7 +10,12 @@ class BooksController < ApplicationController
   end
 
   def index
+    if params[:favorite_count]
+      @books = Book.favorite_count
+    else
     @books = Book.all
+    end
+
     @book =Book.new
   end
 

@@ -6,6 +6,8 @@ class Book < ApplicationRecord
   validates :title,presence:true
   validates :body,presence:true,length:{maximum:200}
 
+  scope :favorite_count, -> {order(favorite: :desc)}
+
   def favorited_by?(user)
     favorites.exists?(user_id: user_id)
   end

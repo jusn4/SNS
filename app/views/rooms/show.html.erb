@@ -1,0 +1,8 @@
+<% @entries.each do |e| %>
+  <% if @myUserId != e.user.id %>
+    <h2><%= e.user.name %>さんとのトークルーム</h2>
+  <% end %>
+<% end %>
+
+<%= link_to "ユーザー一覧に戻る", users_path %>
+
